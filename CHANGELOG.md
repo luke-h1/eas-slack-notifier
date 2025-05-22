@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.3"></a>
+
+## 1.1.3 (2025-05-22)
+
+### Chores
+
+- **lambda:** add wh url ([3a9d8ee](https://github.com/luke-h1/eas-slack-notifier/commit/3a9d8ee))
+- **lambda:** debug ([1e2f6b6](https://github.com/luke-h1/eas-slack-notifier/commit/1e2f6b6))
+- **lambda:** debug ([1daa102](https://github.com/luke-h1/eas-slack-notifier/commit/1daa102))
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/luke-h1/lho-lambda/compare/v1.1.1...v1.1.2) (2025-05-06)
