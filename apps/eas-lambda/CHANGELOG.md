@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.10"></a>
+
+## [1.1.10](https://github.com/luke-h1/eas-slack-notifier/compare/v1.1.9...v1.1.10) (2025-05-22)
+
+**Note:** Version bump only for package @eas-notifier/lambda
+
 <a name="1.1.9"></a>
 
 ## [1.1.9](https://github.com/luke-h1/eas-slack-notifier/compare/v1.1.8...v1.1.9) (2025-05-22)
