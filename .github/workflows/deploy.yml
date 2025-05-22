@@ -26,6 +26,7 @@ env:
   TF_VAR_deployed_by: ${{ github.actor }}
   TF_VAR_git_sha: ${{ github.sha }}
   TF_VAR_api_key: ${{ secrets.STAGING_API_KEY }}
+  TF_VAR_slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 jobs:
   deploy:
