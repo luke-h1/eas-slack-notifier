@@ -1,6 +1,6 @@
 data "archive_file" "auth_archive" {
   type        = "zip"
-  source_dir  = "${path.module}/../apps/lho-authorizer/dist"
+  source_dir  = "${path.module}/../apps/eas-authorizer/dist"
   output_path = "${path.module}/../authorizer.zip"
 }
 
