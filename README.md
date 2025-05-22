@@ -1,6 +1,6 @@
-# lho-lambda
+# eas-slack
 
-Lambda for lhowsam.com. Handles Spotify API requests
+Lambda for eas slack build + submit notifications
 
 ## Tech stack
 
