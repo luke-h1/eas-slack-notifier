@@ -26,6 +26,7 @@ env:
   TF_VAR_certificate_chain: ${{ github.event.inputs.env  == 'staging' && secrets.STAGING_CERTIFICATE_CHAIN || secrets.LIVE_CERTIFICATE_CHAIN }}
   TF_VAR_deployed_by: ${{ github.actor }}
   TF_VAR_api_key: ${{ github.event.inputs.env  == 'staging' && secrets.STAGING_API_KEY || secrets.LIVE_API_KEY }}
+  TF_VAR_slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 jobs:
   destroy:

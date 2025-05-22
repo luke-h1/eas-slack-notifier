@@ -19,6 +19,7 @@ env:
   TF_VAR_git_sha: ${{ github.sha }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TF_VAR_api_key: ${{ secrets.STAGING_API_KEY }}
+  TF_VAR_slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 permissions: write-all
 
