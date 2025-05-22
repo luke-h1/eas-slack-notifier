@@ -10,7 +10,7 @@ resource "aws_lambda_function" "api_authorizer" {
   role             = aws_iam_role.lambda_exec.arn
   handler          = "index.handler"
   source_code_hash = data.archive_file.auth_archive.output_base64sha256
-  runtime          = "nodejs22.x"
+  runtime          = "nodejs20.x"
   memory_size      = 256
   architectures    = ["arm64"]
   timeout          = 10

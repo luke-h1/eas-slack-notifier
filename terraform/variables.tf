@@ -49,7 +49,7 @@ variable "tags" {
   type        = map(string)
   description = "The tags to apply to the resources"
   default = {
-    "Service"   = "eas-notifier"
+    "Service"   = "eas-slack-notify"
     "ManagedBy" = "Terraform"
   }
 }
