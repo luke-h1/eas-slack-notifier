@@ -123,7 +123,7 @@ resource "aws_apigatewayv2_route" "lambda_route_submit" {
   authorization_type = "CUSTOM"
 }
 
-resource "aws_apigatewayv2_route" "lambda_route_submit" {
+resource "aws_apigatewayv2_route" "lambda_route_build" {
   api_id             = aws_apigatewayv2_api.lambda.id
   target             = "integrations/${aws_apigatewayv2_integration.lambda.id}"
   route_key          = "POST /api/eas-build"
