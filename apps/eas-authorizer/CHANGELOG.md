@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.1"></a>
+
+## [1.2.1](https://github.com/luke-h1/eas-slack-notifier/compare/v1.2.0...v1.2.1) (2025-05-27)
+
+**Note:** Version bump only for package @eas-notifier/authorizer
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/luke-h1/eas-slack-notifier/compare/v1.1.10...v1.2.0) (2025-05-27)

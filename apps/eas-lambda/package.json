@@ -1,6 +1,6 @@
 {
   "name": "@eas-notifier/lambda",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "build": "esbuild --bundle --minify --keep-names --sourcemap --sources-content=false --target=node22 --platform=node --outfile=dist/index.js src/index.ts",
     "clean": "rm -rf ./dist",
