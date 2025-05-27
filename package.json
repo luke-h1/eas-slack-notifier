@@ -74,6 +74,7 @@
     }
   },
   "dependencies": {
-    "lerna": "^8.1.9"
+    "lerna": "^8.1.9",
+    "slack-block-builder": "^2.8.0"
   }
 }

@@ -11,7 +11,7 @@ export const handler: Handler = async (
 
   try {
     return await Promise.race([
-      routes(path as RoutePath),
+      routes(path as RoutePath, event.body, event.queryStringParameters),
       lambdaTimeout(context),
     ]).then(value => value);
   } catch (e) {

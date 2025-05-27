@@ -1,10 +1,22 @@
+import { easBuildHandler } from '@lambda/handlers/eas/build';
 import { easSubmitHandler } from '@lambda/handlers/eas/submit';
 import healthHandler from '@lambda/handlers/health';
 import versionHandler from '@lambda/handlers/version';
+import { slackService } from '@lambda/services';
+import { APIGatewayProxyEventQueryStringParameters } from 'aws-lambda';
 
-export type RoutePath = '/api/health' | '/api/version' | '/api/eas-submit';
+export type RoutePath =
+  | '/api/health'
+  | '/api/version'
+  | '/api/eas-submit'
+  | '/api/eas-build';
 
-const routes = (path: RoutePath) => {
+const routes = async (
+  path: RoutePath,
+  body: string | null,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _queryStringParameters?: APIGatewayProxyEventQueryStringParameters | null,
+) => {
   let response: unknown;
 
   switch (path) {
@@ -20,7 +32,13 @@ const routes = (path: RoutePath) => {
       break;
 
     case '/api/eas-submit':
-      response = easSubmitHandler();
+      response = easSubmitHandler(body);
+      await slackService.sendBlockMessage(response as string);
+      break;
+
+    case '/api/eas-build':
+      response = easBuildHandler(body);
+      await slackService.sendBlockMessage(response as string);
       break;
 
     default:

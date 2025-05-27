@@ -110,15 +110,24 @@ resource "aws_apigatewayv2_route" "lambda_route_health_head" {
 resource "aws_apigatewayv2_route" "lambda_route_version" {
   api_id         = aws_apigatewayv2_api.lambda.id
   target         = "integrations/${aws_apigatewayv2_integration.lambda.id}"
-  route_key      = "GET /api/version"
+  route_key      = "POST /api/version"
   operation_name = "version"
 }
 
 resource "aws_apigatewayv2_route" "lambda_route_submit" {
   api_id             = aws_apigatewayv2_api.lambda.id
   target             = "integrations/${aws_apigatewayv2_integration.lambda.id}"
-  route_key          = "GET /api/eas-submit"
+  route_key          = "POST /api/eas-submit"
   operation_name     = "submit"
+  authorizer_id      = aws_apigatewayv2_authorizer.api_key.id
+  authorization_type = "CUSTOM"
+}
+
+resource "aws_apigatewayv2_route" "lambda_route_submit" {
+  api_id             = aws_apigatewayv2_api.lambda.id
+  target             = "integrations/${aws_apigatewayv2_integration.lambda.id}"
+  route_key          = "POST /api/eas-build"
+  operation_name     = "build"
   authorizer_id      = aws_apigatewayv2_authorizer.api_key.id
   authorization_type = "CUSTOM"
 }
