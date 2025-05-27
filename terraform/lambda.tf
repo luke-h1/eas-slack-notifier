@@ -26,13 +26,13 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# data "aws_iam_policy" "aws_xray_write_only_access" {
-#   arn = "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
-# }
-# resource "aws_iam_role_policy_attachment" "aws_xray_write_only_access" {
-#   role       = aws_iam_role.lambda_exec.name
-#   policy_arn = data.aws_iam_policy.aws_xray_write_only_access.arn
-# }
+data "aws_iam_policy" "aws_xray_write_only_access" {
+  arn = "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
+}
+resource "aws_iam_role_policy_attachment" "aws_xray_write_only_access" {
+  role       = aws_iam_role.lambda_exec.name
+  policy_arn = data.aws_iam_policy.aws_xray_write_only_access.arn
+}
 
 resource "aws_lambda_function" "lambda" {
   function_name    = "${var.project_name}-lambda-${var.env}"
@@ -42,9 +42,9 @@ resource "aws_lambda_function" "lambda" {
   filename         = "${path.module}/../lambda.zip"
   source_code_hash = data.archive_file.lambda_archive.output_base64sha256
   timeout          = 10
-  # tracing_config {
-  #   mode = "Active"
-  # }
+  tracing_config {
+    mode = "Active"
+  }
   description   = "Now playing Lambda ${var.env}"
   memory_size   = 256
   architectures = ["arm64"]
