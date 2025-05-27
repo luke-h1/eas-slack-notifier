@@ -64,6 +64,7 @@ variable "api_key" {
   description = "API key for securing the API Gateway endpoints"
   type        = string
   sensitive   = true
+  default     = "secretcat123"
 }
 
 variable "slack_webhook_url" {
