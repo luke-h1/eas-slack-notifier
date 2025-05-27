@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { easBuildHandler } from '@lambda/handlers/eas/build';
 import { easSubmitHandler } from '@lambda/handlers/eas/submit';
 import healthHandler from '@lambda/handlers/health';
@@ -32,12 +33,16 @@ const routes = async (
       break;
 
     case '/api/eas-submit':
+      console.log('hit submit');
       response = easSubmitHandler(body);
+      console.log('submit resp ->', response);
       await slackService.sendBlockMessage(response as string);
       break;
 
     case '/api/eas-build':
+      console.log('hit build');
       response = easBuildHandler(body);
+      console.log('build resp ->', response);
       await slackService.sendBlockMessage(response as string);
       break;
 
