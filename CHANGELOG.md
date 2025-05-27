@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/luke-h1/eas-slack-notifier/compare/v1.4.0...v1.5.0) (2025-05-27)
+
+### Features
+
+- **lambda:** add api key ([7f4e569](https://github.com/luke-h1/eas-slack-notifier/commit/7f4e569))
+
 <a name="1.4.0"></a>
 
 # [1.4.0](https://github.com/luke-h1/eas-slack-notifier/compare/v1.3.0...v1.4.0) (2025-05-27)
